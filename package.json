@@ -2,6 +2,9 @@
   "name": "octocracy",
   "version": "0.0.1",
   "description": "graphQL api",
+  "engines": {
+    "node": "9.2.0"
+  },
   "scripts": {
     "pretest": "standard",
     "test": "ava",
@@ -9,7 +12,7 @@
     "dev": "nodemon src/server.js",
     "copyEnv": "cp .env.example .env -n",
     "postinstall": "npm run build",
-    "build": "babel src --out-dir build"
+    "build": "./node_modules/.bin/babel src --out-dir build"
   },
   "repository": {
     "type": "git",
@@ -33,15 +36,15 @@
     "koa-graphiql": "github:capaj/koa-graphiql",
     "koa-logger": "^3.1.0",
     "koa-router": "^7.3.0",
-    "koa-static": "^4.0.2"
+    "koa-static": "^4.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0"
   },
   "devDependencies": {
-    "ava": "^0.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.0.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-flow": "^6.23.0",
     "eslint-plugin-flowtype": "^2.39.1",
+    "ava": "^0.23.0",
+    "babel-eslint": "^8.0.2",
     "lokka": "^1.7.0",
     "lokka-transport-http": "^1.6.1",
     "standard": "^10.0.3"
