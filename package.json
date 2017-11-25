@@ -7,7 +7,8 @@
     "test": "ava",
     "start": "node build/server.js",
     "dev": "nodemon src/server.js",
-    "postinstall": "cp .env.example .env -n",
+    "copyEnv": "cp .env.example .env -n",
+    "postinstall": "npm run build",
     "build": "babel src --out-dir build"
   },
   "repository": {
